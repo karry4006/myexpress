@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豬肉價格觀察站</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="banner-container">
+            <img src="/images/image_de6330bc.png" alt="豬肉價格觀察站 Banner" id="banner">
+            <div class="header-overlay">
+                <h1>豬肉價格觀察站</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="input-section">
+            <h2>新增/更新資料</h2>
+            <form id="price-form">
+                <div class="input-group">
+                    <label for="year">年份 (民國年):</label>
+                    <input type="number" id="year" required min="1" max="200">
+                </div>
+                <div class="input-group">
+                    <label for="price">價格 (元/公斤):</label>
+                    <input type="number" id="price" step="0.01" required min="0">
+                </div>
+                <button type="submit">送出</button>
+            </form>
+        </section>
+
+        <section id="chart-section">
+            <h2>趨勢圖表</h2>
+            <div class="chart-container">
+                <canvas id="porkChart"></canvas>
+            </div>
+        </section>
+
+        <section id="table-section">
+            <h2>毛豬(市場拍賣價格)</h2>
+            <table id="price-table">
+                <thead>
+                    <tr>
+                        <th>年份 (民國年)</th>
+                        <th>價格 (元/公斤)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 資料將由 JS 插入 -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>
